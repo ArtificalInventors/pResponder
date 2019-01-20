@@ -20,6 +20,8 @@ import android.view.MenuItem;
 import android.view.View;
 import java.util.Timer;
 import java.sql.Timestamp;
+import java.util.TimerTask;
+
 import android.widget.EditText;
 
 import static com.example.presponder.addnotif.CHANNEL_1_ID;
@@ -31,11 +33,10 @@ public class MainActivity extends AppCompatActivity
     private NotificationManagerCompat notificationManager;
     //private EditText editTextTitle;
     //private EditText editTextMessage;
-    Timestamp time = new Timestamp(System.currentTimeMillis());
 
     public void sendOnChannel1(/*View v*/) {
-        String title = "Title";
-        String message = "message";
+        String title = "Medication Reminder";
+        String message = "It is time to take your birth control pill.";
 
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_1_ID)
                 .setSmallIcon(R.drawable.ic_local_pharmacy_black_24dp)
@@ -71,6 +72,16 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        Timer timer = new Timer();
+        TimerTask task = new TimerTask() {
+            @Override
+            public void run() {
+                sendOnChannel1();
+            }
+        };
+
+        timer.schedule(task, 60000, 60000);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -130,7 +141,6 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_medication) {
-            sendOnChannel2();
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.flMain, new MedicationFragment());
             ft.commit();
