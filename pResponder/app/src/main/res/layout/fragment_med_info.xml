@@ -1,14 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#51D19F"
     tools:context=".MedInfoFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#51D19F"
+                android:text="Medical Information"
+                android:textSize="38dp"
+                android:textColor="#FFFFFF" />
+
+            <!--<ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/medicine" />-->
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/goodcolor" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#51D19F"
+                android:text="Name: Nancy Ngo\nDate of Birth: Dec 11, 2000\nSex: Female\nHeight: 162 cm\nWeight: 51 kg
+                \nBlood Group: B+\n\nMedical Conditions: Severe Peanut Allergy, High Blood Pressure"
+                android:textSize="32dp"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="Priyansh Shah"
+        android:text="Nancy Ngo"
         android:textColor="#FFFFFF"
         android:textSize="24dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />

@@ -4,13 +4,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/goodcolor"
     tools:context=".MedicationFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@color/goodcolor">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/goodcolor"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/goodcolor"
+                android:text="Your Medications:"
+                android:textColor="#FFFFFF"
+                android:textSize="38dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/goodcolor" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/goodcolor"
+                android:src="@drawable/pill" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/goodcolor"
+                android:text="Birth Control: 8 AM daily"
+                android:textColor="#FFFFFF"
+                android:textSize="32dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/goodcolor" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@color/goodcolor"
+                android:src="@drawable/bp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/goodcolor"
+                android:text="Blood Pressure: 8 AM, 9 PM daily"
+                android:textColor="#FFFFFF"
+                android:textSize="32dp" />
+        </LinearLayout>
+    </ScrollView>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -18,5 +75,5 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:srcCompat="@android:res/drawable/ic_" />
+        tools:src="@drawable/ic_add_black_24dp" />
 </FrameLayout>
