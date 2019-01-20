@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity
                 .setSmallIcon(R.drawable.ic_local_pharmacy_black_24dp)
                 .setContentTitle(title)
                 .setContentText(message)
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setVibrate(new long[] {1000, 1000, 1000})
                 .build();
 

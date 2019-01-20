@@ -41,7 +41,7 @@
                 android:layout_height="match_parent"
                 android:background="#51D19F"
                 android:text="Name: Nancy Ngo\nDate of Birth: Dec 11, 2000\nSex: Female\nHeight: 162 cm\nWeight: 51 kg
-                \nBlood Group: B+\n\nMedical Conditions: Severe Peanut Allergy, High Blood Pressure"
+                \nBlood Group: B+\n\nMedical Conditions: Severe Peanut Allergy, High Blood Pressure\n\nDoctor Information:"
                 android:textSize="32dp"
                 android:textColor="#FFFFFF" />
         </LinearLayout>
