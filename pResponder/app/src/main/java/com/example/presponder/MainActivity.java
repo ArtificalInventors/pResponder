@@ -53,17 +53,21 @@ public class MainActivity extends AppCompatActivity
         String title = "Emergency Aid Required";
         String message = "This individual has suffered an allergic reaction from peanuts. Please make use of the epi-pen in the right pocket.";
 
-        Notification notification = new NotificationCompat.Builder(this, CHANNEL_2_ID)
+        NotificationCompat.Builder notification = new NotificationCompat.Builder(this, CHANNEL_2_ID)
                 .setSmallIcon(R.drawable.ic_local_hospital_black_24dp)
                 .setContentTitle(title)
                 .setContentText(message)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
-                .setVibrate(new long[] { 1000, 1000, 1000, 1000, 1000 })
+                .setVibrate(new long[] { 1000, 2000, 1500, 2000, 1000 })
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)
-                .setSound(Uri.parse("android.resource://com.example.presponder/raw/peanutallergy"))
-                .build();
+                .setStyle(new NotificationCompat.BigTextStyle()
+                .bigText(message))
+                .setSound(Uri.parse("android.resource://com.example.presponder/raw/peanutallergy"));
 
-        notificationManager.notify(2, notification);
+        Notification mNotification = notification.build();
+
+        mNotification.flags |= Notification.FLAG_INSISTENT;
+        notificationManager.notify(2, mNotification);
     }
 
     @Override
@@ -87,7 +91,7 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
